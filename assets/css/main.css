@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+    --color-cobalt-1000: #2b3750;
+    --color-cobalt-900: #273249;
+    --color-cobalt-800: #242e42;
+    --color-cobalt-700: #20293c;
+    --color-cobalt-600: #1d2535;
+    --color-cobalt-500: #19202e;
+    --color-cobalt-400: #151c28;
+    --color-cobalt-300: #121721;
+    --color-cobalt-200: #0e121b;
+    --color-cobalt-100: #0b0e14;
+    --color-cobalt-50: #07090d;
+}
+
+
+* {
+    @apply transition-all box-border font-[Rubik] scroll-smooth text-white;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent
+}
+
+&::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    @apply overflow-hidden bg-cobalt-50;
+    background-image: linear-gradient(#0e121b .1em, transparent .1em),
+        linear-gradient(90deg, #0e121b .1em, transparent .1em),
+        linear-gradient(#0e121b80 .1em, transparent .1em),
+        linear-gradient(90deg, #0e121b80 .1em, transparent .1em) !important;
+    background-size: 20vw 20vw, 20vw 20vw, 5vw 5vw, 5vw 5vw !important;
+}
+
