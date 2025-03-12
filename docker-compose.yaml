@@ -1,6 +1,6 @@
 name: 'xlsft'
 services:
-  widget:
+  xlsft:
     container_name: 'xlsft'
     build:
       context: .
