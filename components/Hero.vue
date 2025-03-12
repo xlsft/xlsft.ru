@@ -7,16 +7,18 @@
     import Circles from './hero/glyphs/unique/Circles.vue';
     import Arrows from './hero/glyphs/unique/Arrows.vue';
     import Line from './hero/glyphs/unique/Line.vue';
-
+    import { useMediaQuery } from '@ained/composables';
+    const mobile = useMediaQuery('(min-width: 1300px)')
     const glyphs = [ Chain, Circles, Arrows, Line ]
 </script>
 
 <template>
-    <section class="w-full h-full relative flex items-center justify-center overflow-hidden" id="hero">
+    <section class="w-dvw h-dvh min-w-dvw min-h-dvh flex items-center justify-center overflow-hidden relative" id="hero">
         <Logo/>
         <HeroGlyphLetters/>
         <Rays/>
-        <Description/>
-        <component :is="glyph" v-for="glyph in glyphs"/>
+        <Description v-if="!mobile"/>
+        <component :is="glyph" v-for="glyph in glyphs" v-if="!mobile"/>
+        <Arrows class="left-1/2! -translate-x-1/2" v-else/>
     </section>
 </template>

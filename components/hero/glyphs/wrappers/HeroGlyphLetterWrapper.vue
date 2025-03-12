@@ -1,5 +1,8 @@
 <script setup lang="ts">
+    import { useMediaQuery } from '@ained/composables'
+    const mobile = useMediaQuery('(min-width: 1300px)')
     const attributes = ref({ fill: 'transparent', stroke: 'transparent' })
+    
     const delay = () => {
         const r = (max: number, min: number) => Math.floor(Math.random() * (max - min + 1) + min)
         return r(r(0, 200), r(300, 500))
@@ -35,7 +38,7 @@
     
 </script>
 <template>
-    <div class="w-fit h-fit cursor-wait" @mouseenter="light.down" @mouseleave="light.up"> 
+    <div class="w-fit h-fit cursor-wait" @mouseenter="light.down" @mouseleave="light.up" :class="mobile ? 'scale-[.4] first:-mb-[32%] last:-mt-[32%] not-first:not-last:-my-[32%]' : ''"> 
         <slot name="default" :attributes />
     </div>
 </template>

@@ -1,20 +1,21 @@
 <script setup lang="ts">
-    import { useTweened, easing } from '@ained/composables';
-
-    const size = useTweened(0, { duration: 4000, easing: easing.quintInOut })
-    const rotate = useTweened(0, { duration: 4000, easing: easing.quintInOut })
-
+    import { useTweened, easing, useDebouncer, useMediaQuery } from '@ained/composables';
+    const mobile = useMediaQuery('(min-width: 1300px)')
+    const size = useTweened(0, { duration: 4000, easing: easing.quartInOut })
+    const rotate = useTweened(0, { duration: 1000, easing: easing.quartInOut })
     onMounted(async () => {
+        await sleep(2000)
         rotate.target.value = 1000
         size.target.value = document.body.clientWidth - 48 * 4
+        addEventListener('resize', () => size.target.value = (!mobile.value ?  document.body.clientWidth - (48 * 4) : document.body.clientWidth + (48 * 4)))
     })
+
 </script>
 <template>
-    <div class="origin-center">
+    <div class="origin-center transition-none! *:transition-none!">
         <svg
             viewBox="0 0 1570 1570"
             fill="none"
-            class="transition-none"
             :style="`width: ${size.current.value}px; height: ${size.current.value}px; transform: rotate(${rotate.current.value}deg);`"
             xmlns="http://www.w3.org/2000/svg"
             >
