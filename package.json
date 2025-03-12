@@ -10,17 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@ained/composables": "npm:@jsr/ained__composables@^1.1.32",
     "@tailwindcss/vite": "^4.0.12",
-    "@tresjs/cientos": "^4.2.0",
-    "@tresjs/core": "^4.3.3",
-    "@tresjs/nuxt": "^3.0.8",
     "nuxt": "^3.16.0",
     "tailwindcss": "^4.0.12",
-    "three": "^0.174.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
-  },
-  "devDependencies": {
-    "@types/three": "^0.174.0"
   }
 }
