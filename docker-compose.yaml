@@ -1,0 +1,12 @@
+name: 'xlsft'
+services:
+  widget:
+    container_name: 'xlsft'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - PORT=80
+    ports:
+      - "8080:80"
