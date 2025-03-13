@@ -28,8 +28,8 @@
 
 <template>
     <div class="flex flex-col gap-[16px] absolute bottom-[48px] left-1/2 -translate-x-1/2 items-center">
-        <span data-mono class="text-[10px] w-[calc(100dvw-48px-48px-48px-48px)] max-w-[1000px] flex items-center justify-center text-center flex-wrap"><span v-for="letter in data.title">{{ letter === ' ' ? '&nbsp;' : letter }}</span> <span v-if="writing.title" class="h-[14px] w-[10px] bg-white pulse ml-[4px]"></span></span>
-        <span data-mono class="text-[10px] w-[calc(100dvw-48px-48px-48px-48px)] max-w-[1000px] flex items-center justify-center text-center flex-wrap opacity-50"><span v-for="letter in data.subtitle">{{ letter === ' ' ? '&nbsp;' : letter }}</span> <span v-if="writing.subtitle" class="h-[14px] w-[10px] bg-white pulse ml-[4px]"></span></span>
+        <span   class="text-[10px] w-[calc(100dvw-48px-48px-48px-48px)] max-w-[1000px] flex items-center justify-center text-center flex-wrap"><span v-for="letter in data.title">{{ letter === ' ' ? '&nbsp;' : letter }}</span> <span v-if="writing.title" class="h-[14px] w-[10px] bg-white pulse ml-[4px]"></span></span>
+        <span   class="text-[10px] w-[calc(100dvw-48px-48px-48px-48px)] max-w-[1000px] flex items-center justify-center text-center flex-wrap opacity-50"><span v-for="letter in data.subtitle">{{ letter === ' ' ? '&nbsp;' : letter }}</span> <span v-if="writing.subtitle" class="h-[14px] w-[10px] bg-white pulse ml-[4px]"></span></span>
     </div>
 </template>
 

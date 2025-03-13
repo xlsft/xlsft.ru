@@ -7,7 +7,8 @@
         await sleep(2000)
         rotate.target.value = 1000
         size.target.value = document.body.clientWidth - 48 * 4
-        addEventListener('resize', () => size.target.value = (!mobile.value ?  document.body.clientWidth - (48 * 4) : document.body.clientWidth + (48 * 4)))
+        const resize = () => size.target.value = (!mobile.value ? document.body.clientWidth - (48 * 4) : document.body.clientHeight + (48 * 4))
+        addEventListener('resize', resize); watch(() => mobile.value, resize)
     })
 
 </script>

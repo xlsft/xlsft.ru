@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css");
 @import "tailwindcss";
-
 
 @theme {
     --color-cobalt-1000: #2b3750;
@@ -18,17 +14,21 @@
     --color-cobalt-50: #07090d;
 }
 
-[data-mono], [data-mono] * {
-    font-family: 'Cascadia Code', sans-serif !important;
-    font-variant-ligatures: common-ligatures no-discretionary-ligatures
-  historical-ligatures contextual;
+@font-face {
+    font-family: 'Cascadia Code';
+    src: local('Inter'), url("~/assets/fonts/CascadiaCode.woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+    font-variant-ligatures: common-ligatures no-discretionary-ligatures historical-ligatures contextual;
 }
 
 * {
-    @apply transition-all box-border font-[Rubik] scroll-smooth text-white;
+    @apply transition-all box-border scroll-smooth text-white;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    scrollbar-color: transparent transparent
+    scrollbar-color: transparent transparent;
+    font-family: 'Cascadia Code' !important;
 }
 
 &::-webkit-scrollbar {
